@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Subversion svnserve 服务配置  整理 - 自 慎 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=fgzxo2_Ho7mioboYbShX1791ipTrBogX0dCgJ2satJ41"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/AnotherEon001/bundle-AnotherEon001.css?v=dNz80TfH9-81kuLR86t4JWgT2tb_J0B779DQM4kw0WU1"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/93445.css?v=7%2f2MWoez5ZUJwPvwo3%2f9QhFiLs4%3d"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/zhangshufeng/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/zhangshufeng/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/zhangshufeng/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'zhangshufeng', cb_enable_mathjax=false;</script>
+<script src="/bundles/blog-common.js?v=k_VLiLuTR5TaODrvTJO53Mpqwpelr4otNvDzBEpx_m81" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<div id="wrapper">
+<div id="header">
+
+<div id="top">
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/zhangshufeng/">自 慎</a></h1>
+<div id="subtitle">图难于其易，为大于其细！</div>
+</div>
+<div id="sub">
+<div class="BlogStats">随笔 - 19, 文章 - 1, 评论 - 7, 引用 - 0</div>
+</div>
+
+
+
+</div>
+<div id="main_container">
+<div id="main_content">
+<div id="content">
+	
+<div id="post_detail">
+	<div class="post">
+		<h2>
+			<a id="cb_post_title_url" href="http://www.cnblogs.com/zhangshufeng/archive/2011/08/03/2126534.html">Subversion svnserve 服务配置  整理</a>
+		</h2>
+		<div class="postbody">
+		<div id="cnblogs_post_body"><ol>
+<li><span style="color: #000000;" color="#000000"><strong>安装是SVN和TortoiseSVN</strong></span></li>
+</ol>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 下载SVN服务器安装文件：Setup-Subversion-1.6.17.msi ，运行安装。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 下载客户端安装文件：TortoiseSVN-1.6.16.21511-win32-svn-1.6.17.msi，然后运行安装，安装成功后必须重启计算机。也可以根据需要加载中文语言包（不建议使用）。</p>
+<p>&nbsp;&nbsp; 2.&nbsp; <strong>创建SVN资源库</strong></p>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SVN资源库（版本库）的创建有两种方式：命令行方式和客户端方式。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 命令行方式：svnadmin create D:\svn\repos（注意目录路径名区分大小写）</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 客户端方式：通过TortiseSVN来创建，在本地新建目录D:\svn\repos，选中文件夹repos，右击&ldquo;TortoiseSVN&mdash;&mdash;Create repository here&rdquo;</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/zhangshufeng/201108/201108031917154525.jpg"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; margin-right: auto; padding-top: 0px; border-width: 0px;" title="clip_image002" border="0" alt="clip_image002" src="http://images.cnblogs.com/cnblogs_com/zhangshufeng/201108/201108031917172214.jpg" width="244" height="226" /></a></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; <strong>3. 创建基于windows服务svnserver服务</strong></p>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 运行cmd命令输入：sc create svnserve binpath= "C:\Subversion\bin\svnserve.exe --service --root D:\svn\repos" displayname= "svnserve" depend= tcpip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; start=&nbsp; auto</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 上述命令可以实现名为&ldquo;svnserve&rdquo;服务的后台创建和自动启动。但是需要注意下列两点：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;"> a.&nbsp; 如果任意的路径中含有空格，需要使用 转义字符\，如：</span></p>
+<pre><span style="color: #ff0000;">                            sc create svnserve binpath= "
+                            \"C:\Program Files\Subversion\bin\svnserve.exe\"
+                              --service --root c:\repos" displayname= "Subversion" 
+                               depend= tcpip start= auto</span></pre>
+<p><span style="color: #ff0000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b.</span></p>
+<p><span style="color: #ff0000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 注意 <code>sc</code> 的命令行很特殊。在 <code>key= value</code> 对中，key 与 <code>=</code> 之间不能有空格，但是在 value 之前，必须有空格</span>。</p>
+<p>&nbsp; <strong>&nbsp;&nbsp; 4 . 用户的管理</strong></p>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在 Subversion 的使用当中，存在&ldquo;认证&rdquo;、&ldquo;授权&rdquo;两个概念。认证，即 authentication，是指用户名与密码的认证。授权，即authorization ，是指某用户</p>
+<p>是&nbsp; 否具备读、写权限的一种审核。这两者配合作用，就组成了 Subversion 的整个账户管理体系。</p>
+<p>&nbsp;&nbsp; 为了使用用户及权限管理功能文件，必须在服务器端打开D:\svn\ repos\conf\svnserver.conf，去掉下面四行前面的注释，并去掉前面的空格：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # anon-access = read</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # auth-access = write</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # password-db = passwd</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # authz-db = authz</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 并将read参数修改为none，表明禁止匿名用户访问版本控制库。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; password-db = passwd表示用户名和密码所在的资源文件,后面的passwd就是所设定的文件,会在svnserver.conf文件所在的目录下找到上述文件,后面也可以配置成&nbsp;&nbsp;&nbsp;&nbsp; passwd文件所在目录的路径的形式,如../passwd,表示在svnserver.conf的上级路径的目录下</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; authz-db = authz表示授权文件,主要设置用户组&rsquo;及用户组对于特定目录的权限.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: #ff0000;">打开passwd文件,</span></p>
+<p><span style="color: #ff0000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 添加如下形式:&nbsp; zsf = ustb</span></p>
+<p><span style="color: #ff0000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zsf是设定的用户名，ustb是密码。zsf前面不要留空格。</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 注意： <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 权限配置文件中出现的用户名必须已在用户配置文件中定义。 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 对权限配置文件的修改立即生效，不必重启svn。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 为了实现多项目的权限管理，多个项目共享相同的位于根资源库下的配置及认证文件。</p>
+<p>&nbsp; <strong>5. 权限的配置</strong></p>
+<p>Subversion 提供了面向目录的账户权限管理功能，通过它，我们就可以很精确地实现项目目录的访问控制。</p>
+<p>创建完资源库后，出现的authz为认证后的账户访问权限授权文件。</p>
+<p>假设目录结构如下：</p>
+<p>Project</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; dev</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; test</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; test1</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; test2</p>
+<p>要求：</p>
+<p>1、admin对所有目录可读可写</p>
+<p>2、 Dev_group对dev目录可读可写，Test_group无权限</p>
+<p>3、 Test_group对test目录可读可写，Dev_group无权限</p>
+<p>打开D:\SVNServer\ repos\conf\authz，对上面的用户添加分组：</p>
+<p><i>[groups]</i></p>
+<p><i># harry_and_sally = harry,sally</i></p>
+<p><i>Admin_group = admin</i></p>
+<p><i>Dev_group = sc1,sc2</i></p>
+<p><i>Test_group1 = tom1, tom2</i></p>
+<p></p>
+<p><i>[/] //</i><i>对根目录的权限控制</i><i></i></p>
+<p><i>@admin_group = rw</i></p>
+<p><i>* = r</i></p>
+<p><i>[/Cloud /dev] //</i><i>对具体目录的权限控制</i><i></i></p>
+<p><a name="OLE_LINK3"></a><i>@ admin_group = rw</i></p>
+<p><i>@ Develop_group = rw</i></p>
+<p><i>* = //</i><i>其他用户无权限</i><i></i></p>
+<p><i>[/Cloud/test] //</i><i>对具体目录的权限控制</i><i></i></p>
+<p><i>@ admin_group = rw</i></p>
+<p><i>@ Test_group = r</i></p>
+<p><i>* = </i></p>
+<p></p>
+<p>备注：</p>
+<p>1、 如果需要控制的文件夹为中文名称，需要把authz转换为UTF-8格式，建议使用UltraEdit的&ldquo;文件&mdash;&mdash;转换&mdash;&mdash;ASCII to UTF-8&rdquo;（我尝试过记事本转换未遂）。</p>
+<p>若project下新增文件夹，一定要对新文件夹增加权限控制，否则所有人默认为可读。</p>
+<p><strong>6. 数据段导入</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 择你的项目的顶层目录，右击打开上下文菜单。选择命令TortoiseSVN &rarr; 导入 ...，它会弹出一个对话框:</p>
+<p><a name="tsvn-dug-import-dia-1"></a></p>
+<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p align="center"><a href="http://images.cnblogs.com/cnblogs_com/zhangshufeng/201108/201108031917183459.jpg"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="无标题" border="0" alt="无标题" src="http://images.cnblogs.com/cnblogs_com/zhangshufeng/201108/201108031917203.jpg" width="546" height="361" /></a></p>
+<p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; 在弹出的对话框里面，根据提示输入&nbsp; 用户名和密码，确定后进行导入。</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<p class="postfoot">
+			posted on <span id="post-date">2011-08-03 18:48</span> <a href='http://www.cnblogs.com/zhangshufeng/'>自 慎</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="http://i.cnblogs.com/EditPosts.aspx?postid=2126534" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(2126534);return false;">收藏</a>
+		</p>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=93445,cb_entryId=2126534,cb_blogApp=currentBlogApp,cb_blogUserGuid='e4df9741-42b4-e011-8673-842b2b196315',cb_entryCreatedDate='2011/8/3 18:48:00';loadViewCount(cb_entryId);</script>
+	
+	</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='ad_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<div id='ad_c2' class='c_ad_block'></div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+$(function () {
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);    
+});
+</script>
+</div>
+
+
+</div>
+</div>
+<div id="leftmenu">
+
+
+<h3>导航</h3>
+<ul>
+<li>
+<a id="MyLinks1_HomeLink" href="http://www.cnblogs.com/">博客园</a></li>
+<li>
+<a id="MyLinks1_MyHomeLink" class="two_words" href="http://www.cnblogs.com/zhangshufeng/">首页</a></li>
+<li>
+<a id="MyLinks1_NewPostLink" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li>
+<a id="MyLinks1_ContactLink" accesskey="9" class="two_words" rel="nofollow" href="http://msg.cnblogs.com/send/%E8%87%AA%20%E6%85%8E">联系</a></li>
+<li>
+<a id="MyLinks1_Syndication" class="two_words" href="http://www.cnblogs.com/zhangshufeng/rss">订阅</a>
+<a id="MyLinks1_XMLLink" href="http://www.cnblogs.com/zhangshufeng/rss"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" /></a>
+</li>
+<li>
+<a id="MyLinks1_Admin" class="two_words" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+
+<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+<meta name="vs_showGrid" content="False">
+
+<h3>公告</h3>
+<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+
+<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+
+</div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="http://www.cnblogs.com/" style="font-family:Verdana;font-size:12px;">博客园</a>
+	<br />
+	Copyright &copy; 自 慎
+</p>
+</div>
+</div>
+
+</body>
+</html>
