@@ -1,0 +1,1164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+     
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>   
+    
+     
+    <script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script>
+
+  
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <title>【SVN】设置中文路径权限 - 天外有天，人外有人。 专注品质 不断创新 让精益求精成为习惯
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="在几年的时间里，NodeJS逐渐发展成一个成熟的开发平台，吸引了许多开发者。有许多大型高流量网站都采用NodeJS进行开发，像PayPal，此外，开发人员还可以使用它来开发一些快速移动Web框架。除了Web应用外，NodeJS也被应用在许多方面，本文盘点了NodeJS在其它方面所开发的十大令人神奇的项目，这些项目涉及到应用程序监控、媒体流、远程控制、桌面和移动应用等等。1.Node" />
+    <script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/ad.js?v=1.1"></script>
+        <!--new top-->
+               <link rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css">        <!--new top-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/light_blue/css/style.css?v=1.1" />
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/CsethCRM/rss/list" />
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/blue.css" />
+ 
+
+
+</head>
+<body>
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://c.csdnimg.cn/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/csethcrm">天外有天，人外有人。 专注品质 不断创新 让精益求精成为习惯</a></h2>
+            <h3>对事物的理解取决你所达到的层次 </h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+            
+                <li id="btnContents"><a href="http://blog.csdn.net/csethcrm?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/csethcrm?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/csethcrm/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "CsethCRM";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/csethcrm";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/50737496">
+<font color=red>【征文】Hadoop十周年特别策划——我与Hadoop不得不说的故事
+</font></a>
+&nbsp;&nbsp;&nbsp;
+<a href="http://blog.csdn.net/csdnedu/article/details/50788201">
+<font color=blue>前端精品课程免费看，写课评赢心动大礼！
+</font></a>
+</div>                        </div>
+                        
+
+
+
+<!--AdForward Begin:-->
+<script type="text/javascript" ads-src="http://csdnim.qtmojo.com/main/s?user=csdn|blog|fumeiti&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.qtmojo.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+<!--AdForward End-->
+
+  
+<link href="http://static.blog.csdn.net/css/comment1.css" type="text/css" rel="stylesheet" />
+<link href="http://static.blog.csdn.net/css/style1.css" type="text/css" rel="stylesheet" />
+<script language='JavaScript' type='text/javascript' src='http://download.csdn.net/js/jquery.cookie.js'></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/search-service/main.js"></script>
+<link rel="stylesheet" href="http://static.blog.csdn.net/public/res-min/markdown_views.css?v=1.0" />
+<link rel="stylesheet" href="http://static.blog.csdn.net/css/category.css?v=1.0" />
+<script type="text/javascript" src="http://static.blog.csdn.net/public/res/bower-libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+
+ <script type="text/javascript" src="http://static.blog.csdn.net/scripts/web-storage-cache.min.js"></script>
+
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+           
+            var isBole = false;
+            
+          
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="/csethcrm/article/details/24965329">
+        【SVN】设置中文路径权限            
+        </a></span>
+    </h1>
+</div>
+
+   
+
+        <div class="article_manage clearfix">
+        <div class="article_r">
+            <span class="link_postdate">2014-05-04 10:43</span>
+            <span class="link_view" title="阅读次数">2172人阅读</span>
+            <span class="link_comments" title="评论次数"> <a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(0)</span>
+            <span class="link_collect tracking-ad" data-mod="popu_171"> <a href="javascript:void(0);" onclick="javascript:collectArticle('【SVN】设置中文路径权限','24965329');return false;" title="收藏">收藏</a></span>
+             <span class="link_report"> <a href="#report" onclick="javascript:report(24965329,2);return false;" title="举报">举报</a></span>
+
+        </div>
+    </div>
+    <div class="embody"  style="display:none" id="embody">
+        <span class="embody_t">本文章已收录于：</span>
+        <div class="embody_c" id="lib" value="{&quot;err&quot;:0,&quot;msg&quot;:&quot;ok&quot;,&quot;data&quot;:[]}"></div>
+    </div>
+    <style type="text/css">        
+            .embody{
+                padding:10px 10px 10px;
+                margin:0 -20px;
+                border-bottom:solid 1px #ededed;                
+            }
+            .embody_b{
+                margin:0 ;
+                padding:10px 0;
+            }
+            .embody .embody_t,.embody .embody_c{
+                display: inline-block;
+                margin-right:10px;
+            }
+            .embody_t{
+                font-size: 12px;
+                color:#999;
+            }
+            .embody_c{
+                font-size: 12px;
+            }
+            .embody_c img,.embody_c em{
+                display: inline-block;
+                vertical-align: middle;               
+            }
+             .embody_c img{               
+                width:30px;
+                height:30px;
+            }
+            .embody_c em{
+                margin: 0 20px 0 10px;
+                color:#333;
+                font-style: normal;
+            }
+    </style>
+    <script  type="text/javascript">
+        $(function () {
+            var lib = eval("("+$("#lib").attr("value")+")");
+            var html = "";
+            if (lib.err == 0) {
+                $.each(lib.data, function (i) {
+                    var obj = lib.data[i];
+                    //html += '<img src="' + obj.logo + '"/>' + obj.name + "&nbsp;&nbsp;";
+                    html += ' <a href="' + obj.url + '" target="_blank">';
+                    html += ' <img src="' + obj.logo + '">';
+                    html += ' <em><b>' + obj.name + '</b></em>';
+                    html += ' </a>';
+                });
+                if (html != "") {
+                    setTimeout(function () {
+                        $("#lib").html(html);
+                        /*
+                        var testhtml = "";
+                        testhtml += '<a href="#">';
+                        testhtml += '<img src="http://img.knowledge.csdn.net/upload/base/1455589744328_328.jpg">';
+                        testhtml += '<em>Android知识库</em>';
+                        testhtml += '</a>';
+                        $(".embody_c").html(testhtml);
+                        */
+                        $("#embody").show();
+                    }, 100);
+                }
+            }          
+            
+        });
+    </script>
+      <div class="category clearfix">
+        <div class="category_l">
+           <img src="http://static.blog.csdn.net/images/category_icon.jpg">
+            <span>分类：</span>
+        </div>
+        <div class="category_r">
+                    <label  onclick="GetCategoryArticles('1538173','CsethCRM','top','24965329');">
+                        <span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">[ 43 ] SVN<em>（20）</em></span>
+                      <img class="arrow-down" src="http://static.blog.csdn.net/images/arrow_triangle _down.jpg" style="display:inline;">
+                      <img class="arrow-up" src="http://static.blog.csdn.net/images/arrow_triangle_up.jpg" style="display:none;">
+                        <div class="subItem">
+                            <div class="subItem_t"><a  href="http://blog.csdn.net/CsethCRM/article/category/1538173"  target="_blank">作者同类文章</a><i class="J_close">X</i></div>
+                            <ul class="subItem_l" id="top_1538173">                            
+                            </ul>
+                        </div>
+                    </label>                    
+        </div>
+    </div>
+    <script   type="text/javascript" src="http://static.blog.csdn.net/scripts/category.js"></script>  
+        <div   class="bog_copyright">         
+            <p  class="copyright_p" >版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
+        </div>
+
+  
+
+  
+  
+     
+
+<div id="article_content" class="article_content">
+
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">环境：TortoiseSVN-1.7.4.22459-win32-svn-1.7.2.msi，&nbsp;svn-win32-1.6.6</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">【问题描述】</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">有台iOS团队专用的服务器，通过SVN控制项目代码以及团队文档资料，通过分配不同的访问权限方便资料管理。但由于很多目录名是中文，导致目录权限设置失败。</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">【问题分析】</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">1、服务器端通过文件conf\passwd设置用户帐号和密码，比如：</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">cdj = cdj</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">2、服务器端通过文件conf\authz分配用户权限，如下：</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px"># 分组名单</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">admin = cdj</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">normalUser = xxx</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">[/项目代码]</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">@admin = rw</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">@ normalUser = r</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">#说明：用户cdj具有对目录“项目代码”具有写操作，而其它普通用户xxx只有读操作</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">3、注意authz最后几行要以Enter键符结束，否则容易导致authz解析出问题。</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">4、由于用到了中文，需要把authz文件的内容以utf-8&#26684;式保存，并且需要用Ultra Edit工具修改，不能用记事本，记事本在处理utf-8文件时，会在首部加上EF BB BF共3个字节，用以标示这是一个UTF8的字节流，从第4字节起才是文本内容。但svn是不认这个BOM的，会造成读取authz文件失败。</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">通过Ultra Edit的“文件”--》“转换”--》“ASCII到UTF-8”，转换内容编码&#26684;式。</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">【问题小结】</span><br style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">
+<span style="color:rgb(69,69,69); font-family:tahoma,helvetica,arial; font-size:14px; line-height:21px">SVN路径尽量用英文，即使通过上面操作可以支持中文，但如果重启电脑之后，重新打开authz文件时中文部分显示乱码。</span>
+   
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+
+
+
+<div class="bdsharebuttonbox tracking-ad" style="float: right;" data-mod="popu_172">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+   <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_detail.css" />
+
+    
+<!--172.16.140.13-->
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+ 
+
+        <div id="digg" ArticleId="24965329">
+            <dl id="btnDigg" class="digg digg_disable">
+               
+                 <dt>顶</dt>
+                <dd>0</dd>
+            </dl>
+            <dl id="btnBury" class="digg digg_disable">
+              
+                  <dt>踩</dt>
+                <dd>0</dd>
+            </dl>
+        </div>
+
+   <ul class="article_next_prev">
+                <li class="prev_article"><span  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/csethcrm/article/details/24470977';">上一篇</span><a href="/csethcrm/article/details/24470977" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">关于“响应在此上下文中不可用” .</a></li>
+                <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/csethcrm/article/details/25183069';">下一篇</span><a href="/csethcrm/article/details/25183069" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">TortoiseSVN： 不能打开“C:\WINDOWS\TEMP\report.tmp” .</a></li>
+    </ul>
+
+    <div style="clear:both; height:10px;"></div>
+
+
+        <div class="similar_article"  style="display:none">
+                <h4>我的同类文章</h4>
+                <div class="similar_c"style="margin:20px 0px 0px 0px">
+                    <div class="similar_c_t">
+                                <label class="similar_cur">
+                                    <span  style="cursor:pointer"  onclick="GetCategoryArticles('1538173','CsethCRM','foot','24965329');">[ 43 ] SVN<em>（20）</em></span>
+                                </label>
+                    </div>
+                   
+                    <div class="similar_wrap tracking-ad" data-mod="popu_141"  style="max-height:195px;">
+                        <a href="http://blog.csdn.net" style="display:none">http://blog.csdn.net</a>
+                        <ul class="similar_list fl">                          
+                        </ul>
+
+                        <ul class="similar_list fr">                           
+                        </ul>
+                    </div>
+                </div>
+            </div>    
+    <script  type="text/javascript">
+        $(function () {
+            GetCategoryArticles('1538173', 'CsethCRM','foot','24965329');
+        });
+    </script>
+      
+</div>
+<div id="suggest"></div>
+         <script  language="javascript" type='text/javascript'>     
+             $(function(){
+                 $.get("/CsethCRM/svc/GetSuggestContent/24965329",function(data){
+                     $("#suggest").html(data);
+                 });     
+             });             
+         </script>  
+
+
+<style>
+.blog-ass-articl dd {
+color: #369;
+width: 99%; /*修改行*/
+float: left;
+overflow: hidden;
+font: normal normal 12px/23px "SimSun";
+height: 23px;
+margin: 0;
+padding: 0 0 0 10px;
+margin-right: 30px;
+background: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;
+}
+</style>
+
+<dl class="blog-ass-articl" id="res-relatived" > 
+    <div class="embody embody_b" id="libkeyparent"  style="display:none">
+            <span class="embody_t">更多资料请参考：</span>
+            <div class="embody_c" id="libkey"></div>
+    </div>
+
+
+     <dt><span>猜你在找</span></dt>    
+
+
+   
+
+
+    <div id="adCollege" style="width: 42%;float: left;"> 
+        <script src="http://csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            csdn.position.showEdu({
+                sourceType: "blog",
+                searchType: "detail",
+                searchKey: "24965329",
+                username: "",
+                recordcount: "5",
+                containerId: "adCollege" //容器DIV的id。 
+            });
+        </script> 
+    </div>  
+
+    
+     <div id="res"  data-mod="popu_36"  class="tracking-ad" style="width: 42%;float: left;margin-right: 30px;"></div>
+   
+</dl>
+
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var searchtitletags = '【SVN】设置中文路径权限' + ',' + $("#tags").html();
+            searchService({
+                index: 'blog',
+                query: searchtitletags,
+                from: 5,
+                size: 5,
+                appendTo: '#res',
+                url: 'recommend',
+                his: 2,
+                client: "blog_cf_enhance",
+                tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+            });
+        }, 500);
+    });    
+
+ </script>  
+
+    <div id="ad_cen">        
+<!--AdForward Begin:-->
+<script type="text/javascript" src="http://csdnim.qtmojo.com/main/s?user=csdn|blog|banner2&db=csdnim&border=0&local=yes&js=ie" charset="gbk"></script>
+<!--AdForward End-->    </div>  
+
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '24965329';
+    var commentscount = 0;
+    var islock = false
+</script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);    
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+
+
+<div class="tag_list" style="display:none"></div>
+  <script  language="javascript" type='text/javascript'>     
+      $(function(){
+              setTimeout(function(){
+                  $.get("/CsethCRM/svc/GetTagContent",function(data){
+                      $(".tag_list").html(data).show();
+                  });     
+              });
+          },500);                       
+ </script> 
+
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });
+        },200);  
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }   
+
+</script>
+
+
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+                   
+           <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/CsethCRM" target="_blank">
+    <img src="http://avatar.csdn.net/9/A/C/1_csethcrm.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/CsethCRM" class="user_name" target="_blank">CsethCRM</a></span>
+</div>
+<div class="interact">
+
+    <a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=CsethCRM','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                <div id="bms_box">
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>539416次</span></li>
+    <li>积分：<span>7147</span> </li>    
+    <li >等级： <span style="position:relative;display:inline-block;z-index:1" >
+            <img src="http://c.csdnimg.cn/jifen/images/xunzhang/jianzhang/blog6.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：7147 </div>
+        </span>  </li>
+    <li>排名：<span>第1720名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>142篇</span></li>
+    <li>转载：<span>561篇</span></li>
+    <li>译文：<span>0篇</span></li>
+    <li>评论：<span>41条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字" /></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog" />
+        <input type="hidden" name="q" id="inputQ" />
+        <input type="hidden" name="t" value="blog" />
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">    
+                 <li>
+                    <a href="/CsethCRM/article/category/755141" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 01 ]  .NET</a><span>(185)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1352350" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 02 ] Entity Framework</a><span>(13)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1352328" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 03 ] C#</a><span>(124)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1928933" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 04 ] PHP</a><span>(7)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/806639" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 05 ] JavaScript</a><span>(53)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/830623" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 06 ] Silverlight</a><span>(4)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/755146" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 07 ] SQL Server</a><span>(62)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1352413" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 08 ] SQL Server 优化-索引</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/932652" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 09 ] Linq</a><span>(8)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/755937" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 10 ] Other</a><span>(41)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1272009" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 11 ] Ftp</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1294097" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 12 ] 网站维护</a><span>(10)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1294104" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 13 ] 正则表达式</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1294105" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 14 ] html+CSS</a><span>(30)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1294107" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 15 ] WebService</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1311519" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 16 ] Asp.net MVC</a><span>(67)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1057175" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 17 ] 维护应用程序状态</a><span>(13)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1131480" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 18 ] 书籍学习-&gt;改善C#程序的50种方法</a><span>(8)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1314057" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 19 ] 项目管理</a><span>(31)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1316646" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 20 ] Oracle</a><span>(46)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1319978" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 21 ] Winform</a><span>(19)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1328658" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 22 ] MySql</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1343306" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 23 ] WCF</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1352329" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 24 ] ASP.NET</a><span>(86)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1352330" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 25 ] HTML5</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1352332" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 26 ] Web标准</a><span>(5)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1352335" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 27 ] UML</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1352338" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 28 ] .NET编程技巧</a><span>(4)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1352341" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 30 ] 开源框架</a><span>(0)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1352342" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 31 ] 设计模式</a><span>(11)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1352344" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 32 ] 数据导入和导出</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1352346" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 33 ] IIS</a><span>(9)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1352347" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 34 ] HTTP</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1352348" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 35 ] vs2010</a><span>(8)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1352349" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 36 ] NHibernate</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1357110" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 37 ] QC</a><span>(4)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1405416" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 38 ] 富文本编辑器</a><span>(10)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1416616" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 39 ] VBA</a><span>(4)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1421598" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 40 ] ExtJS</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1510331" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 41 ] 工作总结</a><span>(15)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1521875" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 42 ] 软件 - 需求分析</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1538173" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 43 ] SVN</a><span>(21)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1626567" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 44 ] Lucene.net</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1649637" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 46 ] PowerDesigner</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1650279" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 47 ] Office Project2007</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1714691" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 48 ] ERStudio</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1742475" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 49 ] Jcrop</a><span>(0)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1742477" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 50 ] swfupload</a><span>(0)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1742971" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 51 ] 云寻觅中文分词</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1751401" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 52 ] AnHelper</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1767895" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 53 ] Json</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1825719" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 54 ] 字符编码问题</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1836941" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 55 ] Timer</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1846117" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 56 ] 支付接口</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1857225" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 57 ] 加密/解密</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1860719" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 58 ] 自定义html标签</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1870961" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 59 ] VS2012</a><span>(0)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1886407" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 60 ] 应用程序调试</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1895577" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 61 ] No1</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/1918041" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 62 ] Apache+PHP+MySql 环境</a><span>(11)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/2035825" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 63 ]  缓存</a><span>(11)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/2063377" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 64 ] Single Sign On</a><span>(17)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/2106205" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 65 ] 配置文件</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/2191351" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 66 ] MSSQ</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/2200897" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 67 ] 微信</a><span>(0)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/2413741" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 68 ] android</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/2431989" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 69 ] java</a><span>(0)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/2933131" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 70 ] Ioc</a><span>(5)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/3113363" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 71 ] MongoDB</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/5748391" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 72 ] 线程</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/6095628" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 73 ] SQL Server Profiler</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/6098708" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 74 ] MQ</a><span>(5)</span>
+                </li>
+                 <li>
+                    <a href="/CsethCRM/article/category/6104430" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">[ 75 ] C/S 项目打包安装和自动更新</a><span>(2)</span>
+                </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list">
+<!--归档统计-->
+<li><a href="/CsethCRM/article/month/2016/03">2016年03月</a><span>(1)</span></li><li><a href="/CsethCRM/article/month/2016/02">2016年02月</a><span>(12)</span></li><li><a href="/CsethCRM/article/month/2015/12">2015年12月</a><span>(3)</span></li><li><a href="/CsethCRM/article/month/2015/10">2015年10月</a><span>(3)</span></li><li><a href="/CsethCRM/article/month/2015/09">2015年09月</a><span>(5)</span></li><li><a href="/CsethCRM/article/month/2015/08">2015年08月</a><span>(7)</span></li><li><a href="/CsethCRM/article/month/2015/07">2015年07月</a><span>(1)</span></li><li><a href="/CsethCRM/article/month/2015/06">2015年06月</a><span>(19)</span></li><li><a href="/CsethCRM/article/month/2015/05">2015年05月</a><span>(11)</span></li><li><a href="/CsethCRM/article/month/2015/04">2015年04月</a><span>(11)</span></li><li><a href="/CsethCRM/article/month/2015/03">2015年03月</a><span>(8)</span></li><li><a href="/CsethCRM/article/month/2015/02">2015年02月</a><span>(4)</span></li><li><a href="/CsethCRM/article/month/2015/01">2015年01月</a><span>(5)</span></li><li><a href="/CsethCRM/article/month/2014/12">2014年12月</a><span>(2)</span></li><li><a href="/CsethCRM/article/month/2014/11">2014年11月</a><span>(4)</span></li><li><a href="/CsethCRM/article/month/2014/10">2014年10月</a><span>(12)</span></li><li><a href="/CsethCRM/article/month/2014/09">2014年09月</a><span>(15)</span></li><li><a href="/CsethCRM/article/month/2014/08">2014年08月</a><span>(4)</span></li><li><a href="/CsethCRM/article/month/2014/07">2014年07月</a><span>(13)</span></li><li><a href="/CsethCRM/article/month/2014/05">2014年05月</a><span>(21)</span></li><li><a href="/CsethCRM/article/month/2014/04">2014年04月</a><span>(18)</span></li><li><a href="/CsethCRM/article/month/2014/03">2014年03月</a><span>(66)</span></li><li><a href="/CsethCRM/article/month/2014/02">2014年02月</a><span>(45)</span></li><li><a href="/CsethCRM/article/month/2014/01">2014年01月</a><span>(25)</span></li><li><a href="/CsethCRM/article/month/2013/12">2013年12月</a><span>(17)</span></li><li><a href="/CsethCRM/article/month/2013/11">2013年11月</a><span>(12)</span></li><li><a href="/CsethCRM/article/month/2013/10">2013年10月</a><span>(6)</span></li><li><a href="/CsethCRM/article/month/2013/09">2013年09月</a><span>(13)</span></li><li><a href="/CsethCRM/article/month/2013/08">2013年08月</a><span>(22)</span></li><li><a href="/CsethCRM/article/month/2013/07">2013年07月</a><span>(33)</span></li><li><a href="/CsethCRM/article/month/2013/06">2013年06月</a><span>(4)</span></li><li><a href="/CsethCRM/article/month/2013/05">2013年05月</a><span>(29)</span></li><li><a href="/CsethCRM/article/month/2013/04">2013年04月</a><span>(22)</span></li><li><a href="/CsethCRM/article/month/2013/03">2013年03月</a><span>(12)</span></li><li><a href="/CsethCRM/article/month/2013/02">2013年02月</a><span>(7)</span></li><li><a href="/CsethCRM/article/month/2013/01">2013年01月</a><span>(28)</span></li><li><a href="/CsethCRM/article/month/2012/12">2012年12月</a><span>(7)</span></li><li><a href="/CsethCRM/article/month/2012/11">2012年11月</a><span>(11)</span></li><li><a href="/CsethCRM/article/month/2012/10">2012年10月</a><span>(6)</span></li><li><a href="/CsethCRM/article/month/2012/09">2012年09月</a><span>(7)</span></li><li><a href="/CsethCRM/article/month/2012/08">2012年08月</a><span>(5)</span></li><li><a href="/CsethCRM/article/month/2012/07">2012年07月</a><span>(10)</span></li><li><a href="/CsethCRM/article/month/2012/06">2012年06月</a><span>(4)</span></li><li><a href="/CsethCRM/article/month/2012/04">2012年04月</a><span>(8)</span></li><li><a href="/CsethCRM/article/month/2012/03">2012年03月</a><span>(24)</span></li><li><a href="/CsethCRM/article/month/2012/02">2012年02月</a><span>(6)</span></li><li><a href="/CsethCRM/article/month/2012/01">2012年01月</a><span>(6)</span></li><li><a href="/CsethCRM/article/month/2011/12">2011年12月</a><span>(16)</span></li><li><a href="/CsethCRM/article/month/2011/11">2011年11月</a><span>(16)</span></li><li><a href="/CsethCRM/article/month/2011/10">2011年10月</a><span>(1)</span></li><li><a href="/CsethCRM/article/month/2011/08">2011年08月</a><span>(1)</span></li><li><a href="/CsethCRM/article/month/2011/07">2011年07月</a><span>(2)</span></li><li><a href="/CsethCRM/article/month/2011/06">2011年06月</a><span>(6)</span></li><li><a href="/CsethCRM/article/month/2011/05">2011年05月</a><span>(6)</span></li><li><a href="/CsethCRM/article/month/2011/04">2011年04月</a><span>(6)</span></li><li><a href="/CsethCRM/article/month/2011/03">2011年03月</a><span>(4)</span></li><li><a href="/CsethCRM/article/month/2011/01">2011年01月</a><span>(25)</span></li><li><a href="/CsethCRM/article/month/2010/12">2010年12月</a><span>(2)</span></li><li><a href="/CsethCRM/article/month/2010/11">2010年11月</a><span>(5)</span></li>
+</div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/csethcrm/article/details/9231425" title="textarea 在浏览器中固定大小和禁止拖动">textarea 在浏览器中固定大小和禁止拖动</a><span>(36391)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/17995707" title="支付宝接口使用文档说明 支付宝异步通知(notify_url)与return_url. .">支付宝接口使用文档说明 支付宝异步通知(notify_url)与return_url. .</a><span>(24768)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/10490141" title="VS2010中配置SVN插件实现团队开发">VS2010中配置SVN插件实现团队开发</a><span>(10968)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/8139744" title="C#  ftp 上传、下载、删除">C#  ftp 上传、下载、删除</a><span>(10935)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/37928353" title="string.IsNullOrEmpty和string.IsNullOrWhiteSpace方法的区别">string.IsNullOrEmpty和string.IsNullOrWhiteSpace方法的区别</a><span>(8038)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/7409862" title="[HTML] 使用HTML5的本地存储localStorage">[HTML] 使用HTML5的本地存储localStorage</a><span>(6657)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/11934691" title="Office的Project 2007 如果改动甘特图中的起始时间？">Office的Project 2007 如果改动甘特图中的起始时间？</a><span>(6587)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/6333580" title="Ajax调用后台方法">Ajax调用后台方法</a><span>(5946)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/20694993" title="基于SAML的单点登录介绍">基于SAML的单点登录介绍</a><span>(5916)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/7097749" title="C# Response 和 Request">C# Response 和 Request</a><span>(5716)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/csethcrm/article/details/9011691" title="dotnetbar添加的按钮不在窗体中显示">dotnetbar添加的按钮不在窗体中显示</a><span>(6)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/15813797" title="云寻觅中文分词 (Yunxunmi Chinese Word Segmentation) ，词汇440万，10万字文章分词并计算频率不超过1秒">云寻觅中文分词 (Yunxunmi Chinese Word Segmentation) ，词汇440万，10万字文章分词并计算频率不超过1秒</a><span>(5)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/6163431" title="C#获取用户桌面等特殊系统路径">C#获取用户桌面等特殊系统路径</a><span>(3)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/6247692" title="一次性把DataTable中的数据插入数据库">一次性把DataTable中的数据插入数据库</a><span>(3)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/6333580" title="Ajax调用后台方法">Ajax调用后台方法</a><span>(3)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/10490141" title="VS2010中配置SVN插件实现团队开发">VS2010中配置SVN插件实现团队开发</a><span>(2)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/8139744" title="C#  ftp 上传、下载、删除">C#  ftp 上传、下载、删除</a><span>(2)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/21242241" title="修改project任务的默认开始时间">修改project任务的默认开始时间</a><span>(2)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/8900812" title="the server didn&#39;t send back a proper XML response. Please contract your syst">the server didn&#39;t send back a proper XML response. Please contract your syst</a><span>(2)</span>
+</li>
+<li>
+<a href="/csethcrm/article/details/8695316" title="VS2010 引用DevComponents.DotNetBar2">VS2010 引用DevComponents.DotNetBar2</a><span>(1)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend">
+<ul>
+<li><a href="http://blog.csdn.net/gongxifacai_believe/article/details/50823420" 
+
+target="_blank">*Networking Named Content 全文翻译</a></li>
+<li><a href="http://blog.csdn.net/HUSTLX/article/details/50817987" 
+target="_blank">* 边缘检测与图像分割</a></li>
+<li><a href="http://blog.csdn.net/bruce128/article/details/50889256" 
+
+target="_blank">*一次mysql慢查询事故分析</a></li>
+<li><a 
+
+href="http://blog.csdn.net/u013088062/article/details/50893901"target="_blank">*有关深度学习领域的几点想法</a></li>
+<li><a href="http://blog.csdn.net/u013142781/article/details/50821155" 
+target="_blank">* Java经典设计模式之七大结构型模式（附实例和详解）</a></li>
+<li><a href="http://blog.csdn.net/horkychen/article/details/50823594" target="_blank">*网络性能评价方法</a></li>
+
+</ul></ul>
+</div>
+
+
+<div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="/csethcrm/article/details/6247692#comments">一次性把DataTable中的数据插入数据库</a>
+    <p style="margin:0px;"><a href="/Olown" class="user_name">Olown</a>:
+学习了
+    </p>
+    </li>
+    <li>
+   
+         <a href="/csethcrm/article/details/21242241#comments">修改project任务的默认开始时间</a>
+    <p style="margin:0px;"><a href="/liwei3324" class="user_name">liwei3324</a>:
+百度真的很让人无语。既然支持转载文章，为何图片不显示。还TMD放广告推广。
+    </p>
+    </li>
+    <li>
+   
+         <a href="/csethcrm/article/details/21242241#comments">修改project任务的默认开始时间</a>
+    <p style="margin:0px;"><a href="/liwei3324" class="user_name">liwei3324</a>:
+百度真的很让人无语。既然支持转载文章，为何图片不显示。还TMD放广告推广。
+    </p>
+    </li>
+    <li>
+   
+         <a href="/csethcrm/article/details/38976659#comments">js控制表单提交，新窗口打开</a>
+    <p style="margin:0px;"><a href="/ccqqct" class="user_name">ccqqct</a>:
+浏览器才没傻掉，本来在click事件里就可以打开新窗口。只不过之前异步回调的时候早不在click事件...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/csethcrm/article/details/9231425#comments">textarea 在浏览器中固定大小和禁止拖动</a>
+    <p style="margin:0px;"><a href="/dzh15136098019" class="user_name">dzh15136098019</a>:
+第一种方式，resize:none挺好的，但是我在html.chm style中没查到有这个属性
+    </p>
+    </li>
+    <li>
+   
+         <a href="/csethcrm/article/details/9011691#comments">dotnetbar添加的按钮不在窗体中显示</a>
+    <p style="margin:0px;"><a href="/Sly_J" class="user_name">Sly_J</a>:
+谢谢分享，纠结这个问题很久了，找了很久才找到这个
+    </p>
+    </li>
+    <li>
+   
+         <a href="/csethcrm/article/details/9350539#comments">C# 动态调用java webservice,Winform解析Json字符串中特殊值</a>
+    <p style="margin:0px;"><a href="/sys917net" class="user_name">sys917net</a>:
+请问博主，这个 HelloWorld 是什么
+    </p>
+    </li>
+    <li>
+   
+         <a href="/csethcrm/article/details/20632577#comments">js 实现快捷键 .</a>
+    <p style="margin:0px;"><a href="/github_27924183" class="user_name">github_27924183</a>:
+https://github.com/jaywcjlove/hotkeys
+    </p>
+    </li>
+    <li>
+   
+         <a href="/csethcrm/article/details/46045965#comments">EF5.自动生成的数据表名被复数的问题</a>
+    <p style="margin:0px;"><a href="/u010927640" class="user_name">u010927640</a>:
+但是没有找到PluralizingTableNameConvention的引用~~~~(&gt;_&lt;)~~...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/csethcrm/article/details/46045965#comments">dotnetbar添加的按钮不在窗体中显示</a>
+    <p style="margin:0px;"><a href="/kan0505" class="user_name">kan0505</a>:
+给力
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+ </div>   
+            <div class="clear">
+            </div>
+        </div>
+        
+
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=864281"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/JavaScript1.js"></script>
+
+    <script type="text/javascript" src="http://passport.csdn.net/content/loginbox/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-blog.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<span class='tracking-ad' data-mod='popu_167'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a></span>"
+                    + "<span class='tracking-ad' data-mod='popu_170'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a></span>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+
+        $(".bar").show();
+    });
+</script>
+
+
+
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://c.csdnimg.cn/public/common/toolbar/js/toolbar.js"></script>     <!--new top-->
+   
+    <link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" type="text/css" rel="stylesheet" />
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/wmd.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/showdown.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/prettify.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js'></script>
+   
+</body>
+</html>   
+ 
