@@ -1,0 +1,1338 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+     
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>   
+   
+
+    <script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script>
+
+  
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <title>Android 源码编译 make sdk ADT - 享受技术带来的快乐！
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="介绍Modern UI for WPF 是一个WPF界面框架，它在Github（链接）上开源，在VS中可以从Nuget中找到，外观如下：一些东西主区域基于自定义Frame的导航，右上角的Logo是Path路径信息来描述的，不过通过修改项目的源代码可以支持Image（其实就是把类型从Path改成ImageSource）。项目中的配置文件定义了一些公共字符串，如yes，no等。可以在这里改成中文（其实更" />
+    <script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+      <script type="text/javascript" src="http://static.blog.csdn.net/scripts/jquery-version.js"></script>
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/ad.js?v=1.1"></script>
+        <!--new top-->
+               <link rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css">        <!--new top-->
+    
+      <!-- ad begin -->
+         <script language="javascript" type="text/javascript" src="http://ads.csdn.net/js/tracking.js"></script>
+    <!-- ad end-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/skin-blue/css/style.css?v=1.1" />
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/jdsjlzx/rss/list" />
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/default.css" />
+ 
+
+
+</head>
+<body>
+    <!-- 广告位开始 -->
+        <ins data-revive-zoneid="149" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+    <!-- 广告位结束 -->
+
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://c.csdnimg.cn/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/jdsjlzx">享受技术带来的快乐！</a></h2>
+            <h3>目标赋予我们生命的意义和目的。有了目标，我们才会把注意力集中在追求喜悦，而不是在避免痛苦上。</h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+            
+                <li id="btnContents"><a href="http://blog.csdn.net/jdsjlzx?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/jdsjlzx?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/jdsjlzx/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+            
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "jdsjlzx";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/jdsjlzx";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+<a href="http://edu.csdn.net/huiyiCourse/detail/130
+">
+<font color=red>【免费公开课】Gulp前端自动化教程
+</font></a>
+&nbsp;&nbsp;&nbsp;
+<a href="http://blog.csdn.net/blogdevteam/article/details/51423859">
+<font color=blue>走进VR开发世界——我们离开发一款VR大作还有多远？</font></a>
+&nbsp;&nbsp;&nbsp;
+<a href="http://blog.csdn.net/robbin2015/article/details/51446176">
+<font color=red>CSDN发福利啦！C币、京东卡、现金任你选
+</font></a>
+&nbsp;&nbsp;&nbsp;
+
+
+</font></a>
+</div>                        </div>
+                        
+
+
+
+<!-- 广告位开始 -->
+<ins data-revive-zoneid="72" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+<!-- 广告位结束 -->
+
+  
+<link href="http://static.blog.csdn.net/css/comment1.css" type="text/css" rel="stylesheet" />
+<link href="http://static.blog.csdn.net/css/style1.css" type="text/css" rel="stylesheet" />
+<script language='JavaScript' type='text/javascript' src='http://download.csdn.net/js/jquery.cookie.js'></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/search-service/main.js"></script>
+<link rel="stylesheet" href="http://static.blog.csdn.net/public/res-min/markdown_views.css?v=1.0" />
+<link rel="stylesheet" href="http://static.blog.csdn.net/css/category.css?v=1.0" />
+<script type="text/javascript" src="http://static.blog.csdn.net/public/res/bower-libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+
+ <script type="text/javascript" src="http://static.blog.csdn.net/scripts/web-storage-cache.min.js"></script>
+
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/web-storage-cache.min.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/replace.min.js"></script>
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+           
+            var isBole = false;
+            
+          
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="/jdsjlzx/article/details/7317451">
+        Android 源码编译 make sdk ADT            
+        </a></span>
+    </h1>
+</div>
+
+   
+
+        <div class="article_manage clearfix">
+        <div class="article_l">
+            <span class="link_categories">
+            标签：
+              <a href='http://www.csdn.net/tag/android' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">android</a><a href='http://www.csdn.net/tag/eclipse' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">eclipse</a><a href='http://www.csdn.net/tag/path' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">path</a><a href='http://www.csdn.net/tag/%e5%b7%a5%e5%85%b7' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">工具</a><a href='http://www.csdn.net/tag/2010' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">2010</a><a href='http://www.csdn.net/tag/java' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">java</a>
+            </span>
+        </div>
+        <div class="article_r">
+            <span class="link_postdate">2012-03-04 11:10</span>
+            <span class="link_view" title="阅读次数">2996人阅读</span>
+            <span class="link_comments" title="评论次数"> <a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(0)</span>
+            <span class="link_collect tracking-ad" data-mod="popu_171"> <a href="javascript:void(0);" onclick="javascript:collectArticle('Android 源码编译 make sdk ADT','7317451');return false;" title="收藏">收藏</a></span>
+             <span class="link_report"> <a href="#report" onclick="javascript:report(7317451,2);return false;" title="举报">举报</a></span>
+
+        </div>
+    </div>
+    <div class="embody"  style="display:none" id="embody">
+        <span class="embody_t">本文章已收录于：</span>
+        <div class="embody_c" id="lib" value="{&quot;err&quot;:0,&quot;msg&quot;:&quot;ok&quot;,&quot;data&quot;:[]}"></div>
+    </div>
+    <style type="text/css">        
+            .embody{
+                padding:10px 10px 10px;
+                margin:0 -20px;
+                border-bottom:solid 1px #ededed;                
+            }
+            .embody_b{
+                margin:0 ;
+                padding:10px 0;
+            }
+            .embody .embody_t,.embody .embody_c{
+                display: inline-block;
+                margin-right:10px;
+            }
+            .embody_t{
+                font-size: 12px;
+                color:#999;
+            }
+            .embody_c{
+                font-size: 12px;
+            }
+            .embody_c img,.embody_c em{
+                display: inline-block;
+                vertical-align: middle;               
+            }
+             .embody_c img{               
+                width:30px;
+                height:30px;
+            }
+            .embody_c em{
+                margin: 0 20px 0 10px;
+                color:#333;
+                font-style: normal;
+            }
+    </style>
+    <script  type="text/javascript">
+        $(function () {
+            var lib = eval("("+$("#lib").attr("value")+")");
+            var html = "";
+            if (lib.err == 0) {
+                $.each(lib.data, function (i) {
+                    var obj = lib.data[i];
+                    //html += '<img src="' + obj.logo + '"/>' + obj.name + "&nbsp;&nbsp;";
+                    html += ' <a href="' + obj.url + '" target="_blank">';
+                    html += ' <img src="' + obj.logo + '">';
+                    html += ' <em><b>' + obj.name + '</b></em>';
+                    html += ' </a>';
+                });
+                if (html != "") {
+                    setTimeout(function () {
+                        $("#lib").html(html);
+                        /*
+                        var testhtml = "";
+                        testhtml += '<a href="#">';
+                        testhtml += '<img src="http://img.knowledge.csdn.net/upload/base/1455589744328_328.jpg">';
+                        testhtml += '<em>Android知识库</em>';
+                        testhtml += '</a>';
+                        $(".embody_c").html(testhtml);
+                        */
+                        $("#embody").show();
+                    }, 100);
+                }
+            }          
+            
+        });
+    </script>
+      <div class="category clearfix">
+        <div class="category_l">
+           <img src="http://static.blog.csdn.net/images/category_icon.jpg">
+            <span>分类：</span>
+        </div>
+        <div class="category_r">
+                    <label  onclick="GetCategoryArticles('1087481','jdsjlzx','top','7317451');">
+                        <span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">Android系统<em>（115）</em></span>
+                      <img class="arrow-down" src="http://static.blog.csdn.net/images/arrow_triangle _down.jpg" style="display:inline;">
+                      <img class="arrow-up" src="http://static.blog.csdn.net/images/arrow_triangle_up.jpg" style="display:none;">
+                        <div class="subItem">
+                            <div class="subItem_t"><a  href="http://blog.csdn.net/jdsjlzx/article/category/1087481"  target="_blank">作者同类文章</a><i class="J_close">X</i></div>
+                            <ul class="subItem_l" id="top_1087481">                            
+                            </ul>
+                        </div>
+                    </label>                    
+        </div>
+    </div>
+    <script   type="text/javascript" src="http://static.blog.csdn.net/scripts/category.js"></script>  
+        <div   class="bog_copyright">         
+            <p  class="copyright_p" >版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
+        </div>
+
+  
+
+  
+  
+     
+
+<div id="article_content" class="article_content">
+
+<p><span style="font-size:16px">安装虚拟机时建议设置空间为16G左右，否则后面编译源代码可能会导致空间不够</span></p>
+<div><span style="font-size:16px">编译环境：Ubuntu8.10</span></div>
+<div><span style="font-size:16px">1、安装一些环境<br>
+sudo apt-get install build-essential make gcc g&#43;&#43; libc6-dev patch texinfo libncurses-dev git-core gnupg flex bison gperf libsdl-dev libesd0-dev libwxgtk2.6-dev build-essential zip curl ncurses-dev zlib1g-dev valgrind python2.5 sun-java5-jdk<br>
+<br>
+不要用 sun-java6-jdk，否则会有问题<br>
+2、设置环境变量<br>
+vim ~/.bashrc <br>
+在.bashrc中新增或整合PATH变量，如下</span></div>
+<div><span style="font-size:16px">#java 程序开发/运行的一些环境变量<br>
+在home/你的用户名/.bashrc中加入下面一些，有些是后面运行编译后的模拟器而用的<br>
+export JAVA_HOME=usr/lib/jvm/java-1.5.0-sun<br>
+export JRE_HOME=usr/lib/jvm/java-1.5.0-sun/jre<br>
+export PATH=$PATH:$JAVA_HOME/bin<br>
+export PATH=$PATH:~/mydroid/out/host/linux-x86/bin<br>
+export ANDROID_PRODUCT_OUT=~/mydroid/out/target/product/generic<br>
+export CLASSPATH=.:${JAVA_HOME}/lib:$JRE_HOME/lib:$CLASSPATH<br>
+export JAVA_PATH=${JAVA_HOME}/bin:${JRE_HOME}/bin<br>
+HOME_BIN=~/bin/<br>
+export PATH=${PATH}:${JAVA_PATH}:${JRE_PATH}:${HOME_BIN};</span></div>
+<div><br>
+<span style="font-size:16px">3、安装repo（用来更新android源码）<br>
+创建~/bin目录，用来存放repo程序，如下：<br>
+$ cd ~<br>
+$ mkdir bin<br>
+注意：下载后的.repo也许并不在这个文件夹中，请返回上一级目录找到后拷贝至此<br>
+下载repo脚本并使其可执行：<br>
+$ curl </span><a href="http://android.git.kernel.org/repo"><span style="font-size:16px">http://android.git.kernel.org/repo</span></a><span style="font-size:16px"> &gt;~/bin/repo<br>
+$ chmod a&#43;x ~/bin/repo<br>
+<br>
+4、下载 android源码并更新之<br>
+$ mkdir mydroid <br>
+$ cd mydroid <br>
+方式一<br>
+建 议不要用repo来下载（android源码超过1G，非常慢），直接在网上下载http: //www.androidin.com/bbs/pub/cupcake.tar.gz。而且解压出来的 cupcake下也有.repo文件夹，可以通过repo sync来更新cupcake代码：<br>
+tar -xvf cupcake.tar.gz <br>
+repo sync（更新很慢，用了3个小时）<br>
+方式二<br>
+$ repo init -u git://android.git.kernel.org/platform/manifest.git <br>
+运行到这里将出现 repo initialized in /home/&lt;your_home&gt;/mydroid 信息，这时可以认为环境设置已完成 <br>
+下载Android代码 ，运行如下命令 <br>
+$ repo sync <br>
+我是用的方式二，当然如果之前有下载源码的话，直接将源码拷贝到mydroid文件夹就可以了<br>
+5、编译android源码,并得到~/mydroid/out 目录<br>
+进入mydroid源码目录：<br>
+make<br>
+这一过程很久（2个多小时）</span></div>
+<div><span style="font-size:16px">6、在模拟器上运行编译好android</span></div>
+<div><span style="font-size:16px">android SDK的emulator程序在android-sdk-linux_x86-1.0_r2/tools/下，emulator是需要加载一些image 的，默认加载android-sdk-linux_x86-1.0_r2/tools/lib/images下的kernel-qemu（内核） ramdisk.img system.img userdata.img</span></div>
+<div><span style="font-size:16px">编译好android之后，emulator在 ~/project/android/cupcake/out/host/linux-x86/bin下， ramdisk.img system.img userdata.img则在~/project/android/cupcake/out/target/product/generic下<br>
+cd ~/project/android/cupcake/out/host/linux-x86/bin</span></div>
+<div><span style="font-size:16px">增加环境变量<br>
+vim ~/.bashrc<br>
+在.bashrc中新增环境变量，如下<br>
+#java 程序开发/运行的一些环境变量<br>
+export ANDROID_PRODUCT_OUT=~/project/android/cupcake2/out/target/product/generic<br>
+ANDROID_PRODUCT_OUT_BIN=~/project/android/cupcake2/out/host/linux-x86/bin<br>
+export PATH=${PATH}:${ANDROID_PRODUCT_OUT_BIN};</span></div>
+<div><span style="font-size:16px">最后，同步这些变化：<br>
+source ~/.bashrc</span></div>
+<div><span style="font-size:16px">emulator -image system.img -data userdata.img -ramdisk ramdisk.img<br>
+最后进入android桌面，就说明成功了。<br>
+out/host/linux-x86/bin下生成许多有用工具（包括android SDK/tools的所有工具），因此，可以把eclipse中android SDK的路径指定到out/host/linux-x86/bin进行开发</span></div>
+<div><span style="font-size:16px">7、编译linux kernel<br>
+直接make android源码时，并没有make linux kernel。因此是在运行模拟器，所以不用编译 linux kernel。如果要移&#20540;android，或增删驱动，则需要编译 linux kernel<br>
+linux kernel的编译将在以后的文章中介绍。</span></div>
+<div><span style="font-size:16px">8、编译模块<br>
+android中的一个应用程序可以单独编译，编译后要重新生成system.img<br>
+在源码目录下执行<br>
+. build/envsetup.sh （.后面有空&#26684;）<br>
+就多出一些命令：<br>
+- croot: Changes directory to the top of the tree.<br>
+- m: Makes from the top of the tree.<br>
+- mm: Builds all of the modules in the current directory.<br>
+- mmm: Builds all of the modules in the supplied directories.<br>
+- cgrep: Greps on all local C/C&#43;&#43; files.<br>
+- jgrep: Greps on all local Java files.<br>
+- resgrep: Greps on all local res/*.xml files.<br>
+- godir: Go to the directory containing a file.<br>
+可以加—help查看用法<br>
+我们可以使用mmm来编译指定目录的模块，如编译联系人：<br>
+mmm packages/apps/Contacts/<br>
+编完之后生成两个文件：<br>
+out/target/product/generic/data/app/ContactsTests.apk<br>
+out/target/product/generic/system/app/ Contacts.apk<br>
+可以使用make snod重新生成system.img<br>
+再运行模拟器</span></div>
+<div><span style="font-size:16px">9、编译SDK<br>
+直接执行make是不包括make sdk的。make sdk用来生成SDK，这样，我们就可以用与源码同步的SDK来开发 android了。</span></div>
+<div><span style="font-size:16px">1）修改/frameworks/base/include/utils/Asset.h<br>
+‘UNCOMPRESS_DATA_MAX = 1 * 1024 * 1024’ 改为 ‘UNCOMPRESS_DATA_MAX = 2 * 1024 * 1024’<br>
+原因是Eclipse编译工程需要大于1.3M的buffer</span></div>
+<div><span style="font-size:16px">2）编译ADT。<br>
+注意，我们是先执行2），再执行3）。因为在执行./build_server.sh时，会把生成的SDK清除了。<br>
+用上了新的源码，adt这个调试工具也得自己来生成，步骤如下：<br>
+<span style="font-family:Arial; font-size:14px; line-height:26px; text-align:left">若下载的是cupcake源码需进入：development/tools/eclipse/scripts目录，如果下载的是主线代码，需要进入：sdk/eclipse/scripts目录（才会有build_server.sh脚本命令），执行如下命令</span><br style="font-family:Arial; font-size:14px; line-height:26px; text-align:left">
+<br style="font-family:Arial; font-size:14px; line-height:26px; text-align:left">
+<span style="font-family:Arial; font-size:14px; line-height:26px; text-align:left">$export ECLIPSE_HOME=你的eclipse路径</span><br style="font-family:Arial; font-size:14px; line-height:26px; text-align:left">
+<span style="font-family:Arial; font-size:14px; line-height:26px; text-align:left">$./build_server.sh 你想放ADT的路径</span></span></div>
+<div><span style="font-size:16px"><br>
+</span></div>
+<div><span style="font-size:16px">eclipse的安装注意问题：</span></div>
+<div><span style="font-size:16px"></span>
+<p>下载eclipcse,如果不使用jee版本eclipse,在编译ADT时会出现如下错误</p>
+<p>需要下载开发完全版eclipse, 在ubuntu 10.04上直接apt-get install eclipse安装的为简化版<br>
+可以这样操作：<br>
+1. sudo apt-get install eclipse<br>
+2. 下载jee版本的eclipse<br>
+<a href="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/helios/SR1/eclipse-jee-%20helios-SR1-linux-gtk.tar.gz">http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/helios/SR1/eclipse-jee-
+ helios-SR1-linux-gtk.tar.gz</a><br>
+3. sudo rm -rf /usr/lib/eclipse/<br>
+4，解压<br>
+5，sudo mv eclipse /usr/lib</p>
+<p>6,配置环境变量</p>
+<p>vim ~/.bashrc<br>
+在最后添加：<br>
+ECLIPSE_HOME=/usr/lib/eclipse<br>
+export ECLIPSE_HOME;</p>
+<p>export PATH=${PATH}:${ECLIPSE_HOME}</p>
+<p>如果没有添加会出现以下错误：</p>
+<p>Installation Error: Eclipse plugin org.eclipse.equinox.launcher...jar not detected. Found ''. Aborting.</p>
+<p>8，在用户目录下建立一个adt文件夹<br>
+7,development/tools/eclipse/scripts/build_server.sh ~/adt<br>
+如果没有下载完全版的eclipse就会出现以下错误：</p>
+<p>BUILD FAILED<br>
+/usr/lib/eclipse/plugins/org.eclipse.pde.build_3.6.0.v20100603/scripts/build.xml:35: The following error occurred while executing this line:<br>
+/usr/lib/eclipse/plugins/org.eclipse.pde.build_3.6.0.v20100603/scripts/build.xml:91: The following error occurred while executing this line:<br>
+/home/luther.gliethttp/sdk/eclipse/buildConfig/customTargets.xml:14: The following error occurred while executing this line:<br>
+/home/luther.gliethttp/sdk/eclipse/buildConfig/allElements.xml:27: The following error occurred while executing this line:<br>
+/usr/lib/eclipse/plugins/org.eclipse.pde.build_3.6.0.v20100603/scripts/genericTargets.xml:107: A cycle was detected when generating the classpath com.android.ide.eclipse.adt_0.9.8.v201009041615, org.eclipse.jdt_3.6.0.v201006080911, org.eclipse.ui.intro_3.4.0.v20100427,
+ org.eclipse.help.base_3.5.0.v201006080911, org.eclipse.equinox.http.jetty_2.0.0.v20100503, org.mortbay.jetty.util_6.1.23.v201004211559, org.slf4j.api_1.5.11.v20100519-1910, ch.qos.logback.classic_0.9.19.v20100519-1505, ch.qos.logback.core_0.9.19.v20100419-1216,
+ org.slf4j.api_1.5.11.v20100519-1910.</p>
+<p>BUILD FAILED<br>
+/usr/lib/eclipse/plugins/org.eclipse.pde.build_3.5.2.R35x_20100114/scripts/build.xml:35: The following error occurred while executing this line:<br>
+/usr/lib/eclipse/plugins/org.eclipse.pde.build_3.5.2.R35x_20100114/scripts/build.xml:91: The following error occurred while executing this line:<br>
+/home/luther.gliethttp/sdk/eclipse/buildConfig/customTargets.xml:14: The following error occurred while executing this line:<br>
+/home/luther.gliethttp/sdk/eclipse/buildConfig/allElements.xml:27: The following error occurred while executing this line:<br>
+/usr/lib/eclipse/plugins/org.eclipse.pde.build_3.5.2.R35x_20100114/scripts/genericTargets.xml:106: Bundle com.android.ide.eclipse.adt_0.0.0 failed to resolve.:<br>
+Missing required plug-in org.eclipse.gef_0.0.0.<br>
+Missing required plug-in org.eclipse.wst.sse.core_0.0.0.<br>
+Missing required plug-in org.eclipse.wst.sse.ui_0.0.0.<br>
+Missing required plug-in org.eclipse.wst.xml.core_0.0.0.<br>
+Missing required plug-in org.eclipse.wst.xml.ui_0.0.0.</p>
+<br>
+</div>
+<div><span style="font-size:16px"><br>
+</span></div>
+<div><span style="font-size:16px"><br>
+</span></div>
+<div><span style="font-size:16px">3）执行make sdk。<br>
+注意，这里需要的javadoc版本为1.5，所以你需要在步骤1中同时安装sun-java5-jdk<br>
+make sdk<br>
+编 译很慢。编译后生成的SDK存放在out/host/linux-x86/sdk/，此目录下有android-sdk_eng.xxx_linux- x86.zip和android-sdk_eng.xxx_linux-x86目录。android-sdk_eng.xxx_linux-x86就是 SDK目录<br>
+实际上，当用mmm命令编译模块时，一样会把SDK的输出文件清除，因此，最好把android-sdk_eng.xxx_linux-x86移出来</span></div>
+<div><span style="font-size:16px">4）关于环境变量、android工具的选择<br>
+目前的android工具有：<br>
+A、我们从网上下载的SDK（ tools下有许多android工具，lib/images下有img映像）<br>
+B、我们用make sdk编译出来的SDK（ tools下也有许多android工具，lib/images下有img映像）<br>
+C、我们用make编译出来的out目录（ tools下也有许多android工具，lib/images下有img映像）<br>
+那么我们应该用那些工具和img呢？<br>
+首先，我们不会用A选项的工具和img，因为一般来说它比较旧，也源码不同步。测试发现，如果使用B选项的工具和img，android模拟器窗口变小（可能是skin加载不了），而用C选项的工具和img则不会有此问题。<br>
+有 些android工具依赖android.jar（比如android），因此，我们在eclipse中使用B选项的工具（SDK），使用C选项的 img。其实，从emulator -help-build-images也可以看出，ANDROID_PRODUCT_OUT是指向C选项的img目录的<br>
+不过，除了用A选项的工具和img，用B或C的模拟器都不能加载sdcard，原因还不清楚。</span></div>
+<div><span style="font-size:16px">5）安装、配置ADT<br>
+安装、配置ADT请参考官方文档</span></div>
+<div><span style="font-size:16px">6）创建Android Virtual Device<br>
+编译出来的SDK是没有AVD（Android Virtual Device）的，我们可以通过android工具查看：<br>
+android list<br>
+输出为：<br>
+Available Android targets:<br>
+[1] Android 1.5<br>
+API level: 3<br>
+Skins: HVGA-P, QVGA-L, HVGA-L, HVGA (default), QVGA-P<br>
+Available Android Virtual Devices:<br>
+表明没有AVD。如果没有AVD，eclipse编译工程时会出错（Failed to find a AVD compatible with target 'Android 1.5'. Launch aborted.）<br>
+创建AVD：<br>
+android create avd -t 1 -c ~/sdcard.img -n myavd<br>
+可以android –help来查看上面命令选项的用法。创建中有一些选项，默认就行了<br>
+再执行android list，可以看到AVD存放的位置<br>
+以后每次运行emulator都要加-avd myavd或@myavd选项，这里eclipse才会在你打开的emulator中调试程序</span></div>
+<div><br>
+<span style="font-size:16px">注意：<br>
+这样，SDK和ADT就生成了，就按照官方文档把他们整合到Eclipse，这里不再细说了。<br>
+建个android的新工程，试试你自己编译的sdk。</span></div>
+   
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+
+
+
+<div class="bdsharebuttonbox tracking-ad" style="float: right;" data-mod="popu_172">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+   <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_detail.css" />
+
+    
+<!--172.16.140.12-->
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+ 
+
+        <div id="digg" ArticleId="7317451" >
+            <dl id="btnDigg" class="digg digg_disable"  onclick="btndigga();">
+               
+                 <dt>顶</dt>
+                <dd>0</dd>
+            </dl>
+           
+              
+            <dl id="btnBury" class="digg digg_disable"  onclick="btnburya();">
+              
+                  <dt>踩</dt>
+                <dd>0</dd>               
+            </dl>
+            
+        </div>
+     <div class="tracking-ad" data-mod="popu_222"><a href="javascript:void(0);" >&nbsp;</a>   </div>
+    <div class="tracking-ad" data-mod="popu_223"> <a href="javascript:void(0);" >&nbsp;</a></div>
+    <script type="text/javascript">
+                function btndigga() {
+                    $(".tracking-ad[data-mod='popu_222'] a").click();
+                }
+                function btnburya() {
+                    $(".tracking-ad[data-mod='popu_223'] a").click();
+                }
+            </script>
+
+   <ul class="article_next_prev">
+                <li class="prev_article"><span  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/jdsjlzx/article/details/7317316';">上一篇</span><a href="/jdsjlzx/article/details/7317316" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">MAKE Android SDK</a></li>
+                <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/jdsjlzx/article/details/7317554';">下一篇</span><a href="/jdsjlzx/article/details/7317554" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">Ubuntu下Android源码编译及Eclipse开发环境搭建</a></li>
+    </ul>
+
+    <div style="clear:both; height:10px;"></div>
+
+
+        <div class="similar_article"  style="display:none">
+                <h4>我的同类文章</h4>
+                <div class="similar_c"style="margin:20px 0px 0px 0px">
+                    <div class="similar_c_t">
+                                <label class="similar_cur">
+                                    <span  style="cursor:pointer"  onclick="GetCategoryArticles('1087481','jdsjlzx','foot','7317451');">Android系统<em>（115）</em></span>
+                                </label>
+                    </div>
+                   
+                    <div class="similar_wrap tracking-ad" data-mod="popu_141"  style="max-height:195px;">
+                        <a href="http://blog.csdn.net" style="display:none">http://blog.csdn.net</a>
+                        <ul class="similar_list fl">                          
+                        </ul>
+
+                        <ul class="similar_list fr">                           
+                        </ul>
+                    </div>
+                </div>
+            </div>    
+    <script  type="text/javascript">
+        $(function () {
+            GetCategoryArticles('1087481', 'jdsjlzx','foot','7317451');
+        });
+    </script>
+      
+</div>
+<div id="suggest"></div>
+         <script  language="javascript" type='text/javascript'>     
+             $(function(){
+                 $.get("/jdsjlzx/svc/GetSuggestContent/7317451",function(data){
+                     $("#suggest").html(data);
+                 });     
+             });             
+         </script>  
+
+
+<style>
+.blog-ass-articl dd {
+color: #369;
+width: 99%; /*修改行*/
+float: left;
+overflow: hidden;
+font: normal normal 12px/23px "SimSun";
+height: 23px;
+margin: 0;
+padding: 0 0 0 10px;
+margin-right: 30px;
+background: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;
+}
+</style>
+
+ <link rel="stylesheet" href="http://static.blog.csdn.net/css/replace.css"/>
+<div id="relate" data-mod="popu_218"  class="tracking-ad">
+        <div class="relate_t">
+            <h3><span>参考知识库</span></h3>
+        </div>
+        <div class="relate_c">
+        </div>
+</div>
+ 
+
+<dl class="blog-ass-articl" id="res-relatived" > 
+    <div class="embody embody_b" id="libkeyparent"  style="display:none">
+            <span class="embody_t">更多资料请参考：</span>
+            <div class="embody_c" id="libkey"></div>
+    </div>
+
+
+     <dt><span>猜你在找</span></dt>    
+
+
+   
+
+
+    <div id="adCollege" style="width: 42%;float: left;"> 
+        <script src="http://csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            csdn.position.showEdu({
+                sourceType: "blog",
+                searchType: "detail",
+                searchKey: "7317451",
+                username: "",
+                recordcount: "5",
+                containerId: "adCollege" //容器DIV的id。 
+            });
+        </script> 
+    </div>  
+
+    
+     <div id="res"  data-mod="popu_36"  class="tracking-ad" style="width: 42%;float: left;margin-right: 30px;"></div>
+   
+</dl>
+
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var searchtitletags = 'Android 源码编译 make sdk ADT' + ',' + $("#tags").html();
+            searchService({
+                index: 'blog',
+                query: searchtitletags,
+                from: 5,
+                size: 5,
+                appendTo: '#res',
+                url: 'recommend',
+                his: 2,
+                client: "blog_cf_enhance",
+                tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+            });
+        }, 500);
+    });    
+
+ </script>  
+
+    <div id="ad_cen">        
+<!-- 广告位开始 -->
+<ins data-revive-zoneid="71" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+<!-- 广告位结束 -->    </div>  
+
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '7317451';
+    var commentscount = 0;
+    var islock = false
+</script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);    
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+
+
+<div class="tag_list" style="display:none"></div>
+  <script  language="javascript" type='text/javascript'>     
+      $(function(){
+              setTimeout(function(){
+                  $.get("/jdsjlzx/svc/GetTagContent",function(data){
+                      $(".tag_list").html(data).show();
+                  });     
+              });
+          },500);                       
+ </script> 
+
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });         
+
+        },200);  
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },5000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },10000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },15000);
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }   
+
+</script>
+ <script language="javascript" type="text/javascript" src="http://ads.csdn.net/js/async_new.js"></script>      
+
+
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+                   
+           <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/jdsjlzx" target="_blank">
+    <img src="http://avatar.csdn.net/2/9/C/1_jdsjlzx.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/jdsjlzx" class="user_name" target="_blank">jdsjlzx</a></span>
+</div>
+<div class="interact">
+
+    <a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=jdsjlzx','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                       <div class="ico_expert"  onclick="javascript:location='http://blog.csdn.net/experts/rule.html'" title="CSDN认证专家" style="cursor:pointer;width:60px;height:60px;background:url('http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/bokezhuanjiamiddle.png') no-repeat" ></div>
+                <div id="bms_box">
+                                            <a  target="_blank">
+                                                    <img src="http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/zhuanlandaren.png" onmouseover="m_over_m(this,2)" onmouseout="m_out_m()" alt="1" >
+                                            </a>
+                                            <a  target="_blank">
+                                                    <img src="http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/chizhiyiheng.png" onmouseover="m_over_m(this,4)" onmouseout="m_out_m()" alt="1" >
+                                            </a>
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>4679981次</span></li>
+    <li>积分：<span>49113</span> </li>    
+    <li >等级： <span style="position:relative;display:inline-block;z-index:1" >
+            <img src="http://c.csdnimg.cn/jifen/images/xunzhang/jianzhang/blog8.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：49113 </div>
+        </span>  </li>
+    <li>排名：<span>第44名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>613篇</span></li>
+    <li>转载：<span>1523篇</span></li>
+    <li>译文：<span>7篇</span></li>
+    <li>评论：<span>1264条</span></li>
+</ul>
+</ul>
+</div>
+
+
+
+
+<div id="custom_column_40916529" class="panel">
+<ul class="panel_head"><span>联系我</span></ul>
+<ul class="panel_body">
+
+商务合作QQ：五七三八四二二八一 <br>
+如果你感觉本博客对你有帮助，请支持我吧！ <br>
+<img src="http://img.blog.csdn.net/20160524104553306?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="" width="180" height="200">
+<br>
+<br>
+技术交流QQ群：183899857
+
+</ul>
+</div><div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字" /></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog" />
+        <input type="hidden" name="q" id="inputQ" />
+        <input type="hidden" name="t" value="blog" />
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script><div id="panel_Category" class="panel">
+    <ul class="panel_head"><span>博客专栏</span></ul>
+    <ul class="panel_body" id="sp_column">
+    <table cellpadding="0" cellspacing="0"><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/retrofit.html" target="_blank"><img src="http://img.blog.csdn.net/column" style="width:75px;height:75px;" /></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/retrofit.html" target="_blank">Android开发之Rxjava+Retrofit</a>
+    <p>文章：6篇</p>
+    <span>阅读：1510</span>
+    </td>
+    </tr></table>
+    </ul>
+</div><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">    
+                 <li>
+                    <a href="/jdsjlzx/article/category/791740" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">java</a><span>(129)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/787415" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">java点滴</a><span>(53)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/720282" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">jsp</a><span>(7)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/541790" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">技术前瞻</a><span>(7)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/754383" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">服务器</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/844737" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android开发</a><span>(1591)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/852422" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">音乐心情</a><span>(18)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/878509" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">json</a><span>(7)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1065702" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">工作点滴</a><span>(52)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1075350" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">C++</a><span>(21)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1078318" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android UI</a><span>(820)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1078333" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">书籍推荐</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1078840" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android项目</a><span>(7)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1081161" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Socket</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1083105" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android开发 qq 表情</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1085648" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android通讯录</a><span>(7)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1087481" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android系统</a><span>(116)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1104295" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Ubuntu</a><span>(31)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1147286" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">开源工具组件</a><span>(59)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1152994" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android优化</a><span>(65)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1155837" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android异常处理</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1160603" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android图片处理</a><span>(63)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1161577" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android ListView</a><span>(38)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1163549" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android新知识</a><span>(21)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1174067" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">android fragment</a><span>(27)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1174639" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android webview</a><span>(14)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1174641" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android优化</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1261130" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android 视频</a><span>(16)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1278687" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">java串口通信</a><span>(9)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1302806" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android Animation</a><span>(16)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1328046" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android NDK</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1345671" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android短彩信</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1346312" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android多媒体</a><span>(28)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1353663" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android 网络</a><span>(48)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1375096" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android 短彩信</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1391876" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android Sqlite</a><span>(8)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1404700" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Java 网络通信</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/1691983" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">C</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/2504701" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">程序人生</a><span>(9)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/2812929" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">加密算法</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/2812967" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">数据结构与算法</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/5795257" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">理财</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/5942483" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">支付宝</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/6188562" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android Studio</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/jdsjlzx/article/category/6208037" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">天天向上</a><span>(8)</span>
+                </li>
+</ul>
+</div><div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/jdsjlzx/article/details/41441083" title="Android Material Design之Toolbar与Palette实践">Android Material Design之Toolbar与Palette实践</a><span>(85016)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/7678171" title="Fragment和FragmentActivity的使用方法 .">Fragment和FragmentActivity的使用方法 .</a><span>(69325)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/45891551" title="Android屏幕适配全攻略(最权威的官方适配指导)">Android屏幕适配全攻略(最权威的官方适配指导)</a><span>(68451)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/44160603" title="Android仿微信图片上传，可以选择多张图片，缩放预览，拍照上传等">Android仿微信图片上传，可以选择多张图片，缩放预览，拍照上传等</a><span>(59845)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/41643587" title="android状态栏一体化(改变状态栏的背景颜色)">android状态栏一体化(改变状态栏的背景颜色)</a><span>(58977)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/25063169" title="android EditText自定义样式">android EditText自定义样式</a><span>(50085)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/40738181" title="Android网络框架Volley">Android网络框架Volley</a><span>(34338)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/8825724" title="HttpClient通过Post上传文件">HttpClient通过Post上传文件</a><span>(31836)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/46514761" title="Android自定义View——自定义搜索框（SearchView）">Android自定义View——自定义搜索框（SearchView）</a><span>(29791)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/44182693" title="Android控件GridView之仿支付宝钱包首页带有分割线的GridView九宫格的完美实现">Android控件GridView之仿支付宝钱包首页带有分割线的GridView九宫格的完美实现</a><span>(29055)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/jdsjlzx/article/details/44160603" title="Android仿微信图片上传，可以选择多张图片，缩放预览，拍照上传等">Android仿微信图片上传，可以选择多张图片，缩放预览，拍照上传等</a><span>(106)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/41441083" title="Android Material Design之Toolbar与Palette实践">Android Material Design之Toolbar与Palette实践</a><span>(50)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/41643587" title="android状态栏一体化(改变状态栏的背景颜色)">android状态栏一体化(改变状态栏的背景颜色)</a><span>(30)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/47422279" title="android微信支付问题总结">android微信支付问题总结</a><span>(27)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/45891551" title="Android屏幕适配全攻略(最权威的官方适配指导)">Android屏幕适配全攻略(最权威的官方适配指导)</a><span>(21)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/45042081" title="Android中常见的热门标签的流式布局的实现">Android中常见的热门标签的流式布局的实现</a><span>(17)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/44182693" title="Android控件GridView之仿支付宝钱包首页带有分割线的GridView九宫格的完美实现">Android控件GridView之仿支付宝钱包首页带有分割线的GridView九宫格的完美实现</a><span>(17)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/50437779" title="android状态栏一体化、沉浸式状态栏(兼容低版本)">android状态栏一体化、沉浸式状态栏(兼容低版本)</a><span>(17)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/44228935" title="Android图片压缩（质量压缩和尺寸压缩）">Android图片压缩（质量压缩和尺寸压缩）</a><span>(15)</span>
+</li>
+<li>
+<a href="/jdsjlzx/article/details/7606423" title="Android自定义捕获Application全局异常">Android自定义捕获Application全局异常</a><span>(14)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend">
+<ul>
+<li><a href="http://blog.csdn.net/woshimalingyi/article/details/51476559" 
+target="_blank">*基于AOP的非侵入式监控之——AspectJ实战</a></li>
+<li><a href="http://blog.csdn.net/yanghua_kobe/article/details/51503885" 
+target="_blank">* Apache Flink fault tolerance源码剖析(一)</a></li>
+<li><a href="http://blog.csdn.net/lw_ghy/article/details/51420027" 
+
+target="_blank">*spark性能调优：开发调优</a></li>
+<li><a 
+
+href="http://blog.csdn.net/hanhailong726188/article/details/50687466"target="_blank">*Rebound-Android的弹簧动画库</a></li>
+<li><a href="http://blog.csdn.net/gj19890923/article/details/51333899" 
+target="_blank">*neutron-server的启动流程(一)</a></li>
+<li><a href="http://blog.csdn.net/u010143774/article/details/51460947" target="_blank">*Hadoop中Map端shuffle源码解析</a></li>
+
+</ul></ul>
+</div>
+
+
+<div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="/jdsjlzx/article/details/51482603#comments">Retrofit2实现缓存、离线缓存、在线缓存及@headers控制缓存时间</a>
+    <p style="margin:0px;"><a href="/shusheng_" class="user_name">shusheng_</a>:
+我get请求的时候是成功的，但是我还有post请求，然后post请求的时候就不行
+    </p>
+    </li>
+    <li>
+   
+         <a href="/jdsjlzx/article/details/51482603#comments">Retrofit2实现缓存、离线缓存、在线缓存及@headers控制缓存时间</a>
+    <p style="margin:0px;"><a href="/jdsjlzx" class="user_name">jdsjlzx</a>:
+@shusheng_:get还是post，需要服务器决定，不能尝试！
+    </p>
+    </li>
+    <li>
+   
+         <a href="/jdsjlzx/article/details/51482603#comments">Retrofit2实现缓存、离线缓存、在线缓存及@headers控制缓存时间</a>
+    <p style="margin:0px;"><a href="/shusheng_" class="user_name">shusheng_</a>:
+换成post就不行了，请问是什么原因呢
+    </p>
+    </li>
+    <li>
+   
+         <a href="/jdsjlzx/article/details/51377378#comments">Android通用流行框架大全</a>
+    <p style="margin:0px;"><a href="/qq_18377023" class="user_name">qq_18377023</a>:
+@jdsjlzx:嗯嗯  好像还得审核，看你发表的博客好多，以后慢慢学习了 ，嘿嘿
+    </p>
+    </li>
+    <li>
+   
+         <a href="/jdsjlzx/article/details/51377378#comments">Android通用流行框架大全</a>
+    <p style="margin:0px;"><a href="/jdsjlzx" class="user_name">jdsjlzx</a>:
+@qq_18377023:csdn转载跟发表博客的方式一样，也需要付出劳动的，不是点一下鼠标就可以的...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/jdsjlzx/article/details/51377378#comments">Android通用流行框架大全</a>
+    <p style="margin:0px;"><a href="/qq_18377023" class="user_name">qq_18377023</a>:
+收集的真全，就是不知道怎么转载
+    </p>
+    </li>
+    <li>
+   
+         <a href="/jdsjlzx/article/details/47422279#comments">android微信支付问题总结</a>
+    <p style="margin:0px;"><a href="/qq_22326601" class="user_name">qq_22326601</a>:
+@jdsjlzx:好吧
+    </p>
+    </li>
+    <li>
+   
+         <a href="/jdsjlzx/article/details/47422279#comments">android微信支付问题总结</a>
+    <p style="margin:0px;"><a href="/jdsjlzx" class="user_name">jdsjlzx</a>:
+@qq_22326601:微信退款我还没有接触过，你看看官方文档吧
+    </p>
+    </li>
+    <li>
+   
+         <a href="/jdsjlzx/article/details/47422279#comments">android微信支付问题总结</a>
+    <p style="margin:0px;"><a href="/qq_22326601" class="user_name">qq_22326601</a>:
+我用JAVA试了，2种方法都可以退款，移植到安卓工程里面之后就退不了款呢。
+    </p>
+    </li>
+    <li>
+   
+         <a href="/jdsjlzx/article/details/47422279#comments">android微信支付问题总结</a>
+    <p style="margin:0px;"><a href="/qq_22326601" class="user_name">qq_22326601</a>:
+我在JAVA上面都试了，2种退款方式都没问题。
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+ </div>   
+            <div class="clear">
+            </div>
+        </div>
+
+        
+
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=576130"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/JavaScript1.js"></script>
+
+    <script type="text/javascript" src="http://passport.csdn.net/content/loginbox/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-blog.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<span class='tracking-ad' data-mod='popu_167'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a></span>"
+                    + "<span class='tracking-ad' data-mod='popu_170'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a></span>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+
+        $(".bar").show();
+    });
+</script>
+
+
+
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://c.csdnimg.cn/public/common/toolbar/js/toolbar.js"></script>     <!--new top-->
+   
+    <link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" type="text/css" rel="stylesheet" />
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/wmd.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/showdown.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/prettify.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js'></script>
+   
+
+  <div id="a52b5334d" style="width: 1px; height: 1px; display: none;">
+                    <script id="adJs52b5334"></script>
+                    <script>document.getElementById("adJs52b5334").src = "http://ads.csdn.net/js/opt/52b5334.js?t=" + Math.random();</script>
+   </div>
+
+</body>
+</html>   
+ 
